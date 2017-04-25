@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>attr</title>
+	<script src="js/jquery-3.2.1.js"></script>
+</head>
+
+<body>
+	<div id="clickMe" title="hello">点击我</div>
+
+	<script>
+		var div2 = $('clickMe');
+		div2.attr('title');
+		console.log(div2.attr('title'))
+
+		$('clickMe').on('click',function(){
+			console.log($(this));
+			console.log('我是点击后的结果');
+
+		})
+	</script>
+</body>
+
+</html>

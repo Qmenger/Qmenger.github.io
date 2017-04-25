@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>JQuery常用知识运用</title>
+	<style>
+		.test2 {
+			background: #080;
+			color: #ff0;
+		}
+	</style>
+</head>
+
+<body>
+	<div>div标签1</div>
+	<div>div标签2</div>
+	<hr>
+	<div class="content">content内饰</div>
+	<div id="box" class="content red">这是box盒子</div>
+	<input type="button" id="btn" value="切换class">
+	<h2>标题标签</h2>
+	<hr>
+	<div class="box1">
+		<p>段落1</p>
+		<p>段落2</p>
+	</div>
+	<div class="box2">
+		<p>段落3</p>
+		<p>段落4</p>
+	</div>
+	<button id="btn01" class="btn011">按钮A</button>
+	<button id="btn02">按钮B</button>
+	<hr>
+	<script src="js/jquery-3.2.1.js"></script>
+	<script>
+		var div = $('<div>jQuery创建的div</div>');
+		var text = $("<div id='test' class='aaron'>我是文本节点</div>");
+		div.appendTo('body'); //添加到body
+		text.addClass(' test2');
+		text.appendTo('body');
+
+		var newcontent = $(".content");
+		newcontent.append('<div>newcontent文本内容</div>')//添加
+
+
+		$('#btn').click(function () {
+			var box = $('#box');
+			box.after('<div>后边啦啦啦</div>')//在box后添加html代码内容
+
+		})
+
+
+		$('#btn01').click(function(){
+			$('.box1').remove();//remove移除整个box1
+		})
+		$('#btn02').click(function(){
+			$('p').remove(":contains('3')");//remove移除p标签数组中contains(包含)包含3的 p 元素
+		})
+
+		$('div').click(function(){//效果没有实现
+			$(this).clone();
+			$(this).clone(true);
+		})
+
+	</script>
+</body>
+
+</html>
